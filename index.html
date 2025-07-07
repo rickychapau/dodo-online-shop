@@ -20,7 +20,7 @@
   <section id="hero">
     <h2>Delicious Meals Delivered Fresh</h2>
     <p>Order today and enjoy top-quality meals at affordable prices.</p>
-    <a href="https://wa.me/67571543680?text=Hi%20Dodo%2C%20I'd%20like%20to%20order%20a%20meal!" class="btn-primary">Order via WhatsApp</a>
+    <a id="whatsapp-cart-link" href="#" class="btn-primary" target="_blank">Order via WhatsApp</a>
   </section>
 
   <section id="products">
@@ -32,15 +32,13 @@
         <p>Crunchy, tasty, served with fries + drink</p>
         <p><strong>K30.00</strong></p>
         <button type="button" onclick="addToCart('Chicken Schnitzel Meal', 30.00)">Add to Cart</button>
-        <a class="whatsapp-button" href="https://wa.me/67571543680?text=Hi%20Dodo%2C%20I'd%20like%20to%20order%20the%20Chicken%20Schnitzel%20Meal." target="_blank">Order via WhatsApp</a>
       </div>
       <div class="product-card">
-        <img src="Fried Rice.png" alt="https://github.com/rickychapau/dodo-online-shop/blob/main/Fried%20Rice.png" />
+        <img src="fried rice.png" alt="Fried Rice" />
         <h3>Fried Rice & Chicken</h3>
         <p>Classic fried rice with marinated chicken</p>
         <p><strong>K25.00</strong></p>
         <button type="button" onclick="addToCart('Fried Rice & Chicken', 25.00)">Add to Cart</button>
-        <a class="whatsapp-button" href="https://wa.me/67571543680?text=Hi%20Dodo%2C%20I'd%20like%20to%20order%20Fried%20Rice%20&%20Chicken." target="_blank">Order via WhatsApp</a>
       </div>
     </div>
   </section>
@@ -86,15 +84,23 @@
     function updateCartDisplay() {
       const cartList = document.getElementById('cart-items');
       const cartTotal = document.getElementById('cart-total');
+      const whatsappLink = document.getElementById('whatsapp-cart-link');
 
       cartList.innerHTML = '';
+      let message = "Hi Dodo, I'd like to order:\n";
+
       cartItems.forEach(item => {
         const li = document.createElement('li');
         li.textContent = `${item.name} - K${item.price.toFixed(2)}`;
         cartList.appendChild(li);
+        message += `- ${item.name} (K${item.price.toFixed(2)})\n`;
       });
 
       cartTotal.textContent = total.toFixed(2);
+
+      message += `\nTotal: K${total.toFixed(2)}`;
+      const encodedMessage = encodeURIComponent(message);
+      whatsappLink.href = `https://wa.me/67571543680?text=${encodedMessage}`;
     }
   </script>
 </body>
