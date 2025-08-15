@@ -11,6 +11,7 @@
   </style>
 </head>
 <body>
+  <!-- Header -->
   <header>
     <div class="container">
       <h1>Dodo's Shop</h1>
@@ -22,6 +23,7 @@
     </div>
   </header>
 
+  <!-- Hero Section -->
   <section id="hero">
     <div class="container hero-content">
       <h2>Delicious Meals Delivered Fresh</h2>
@@ -30,6 +32,7 @@
     </div>
   </section>
 
+  <!-- Products Section -->
   <section id="products" class="container">
     <h2>Today's Specials</h2>
     <div class="product-grid">
@@ -50,6 +53,7 @@
     </div>
   </section>
 
+  <!-- Cart Section -->
   <section id="cart" class="container">
     <h2>Your Cart</h2>
     <ul id="cart-items"><li>Your cart is empty</li></ul>
@@ -57,6 +61,7 @@
     <button class="btn-secondary" onclick="clearCart()">Clear Cart</button>
   </section>
 
+  <!-- Contact Section -->
   <section id="contact" class="container">
     <h2>Contact Us</h2>
     <form onsubmit="event.preventDefault(); alert('Thanks for your message!')">
@@ -67,6 +72,7 @@
     </form>
   </section>
 
+  <!-- Footer -->
   <footer>
     <div class="container">
       <p>© 2025 Dodo's Shop. All rights reserved.</p>
@@ -74,6 +80,7 @@
     </div>
   </footer>
 
+  <!-- JavaScript -->
   <script>
     const cartItems = [];
     let total = 0;
@@ -98,7 +105,7 @@
       cartList.innerHTML = '';
       let message = "Hi Dodo, I'd like to order:\n";
 
-      if (cartItems.length === 0) {
+      if(cartItems.length === 0) {
         cartList.innerHTML = '<li>Your cart is empty</li>';
       } else {
         cartItems.forEach(item => {
@@ -110,10 +117,7 @@
       }
 
       cartTotal.textContent = total.toFixed(2);
-
-      message += `\nTotal: K${total.toFixed(2)}`;
-      const encodedMessage = encodeURIComponent(message);
-      whatsappLink.href = `https://wa.me/67571543680?text=${encodedMessage}`;
+      whatsappLink.href = `https://wa.me/67571543680?text=${encodeURIComponent(message + '\nTotal: K' + total.toFixed(2))}`;
     }
   </script>
 </body>
