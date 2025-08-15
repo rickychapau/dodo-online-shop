@@ -1,131 +1,169 @@
-body {
-  font-family: 'Poppins', sans-serif;
+/* Basic Reset */
+* {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  line-height: 1.6;
   background-color: #fff;
   color: #333;
 }
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* Header */
 header {
-  background: #111;
-  color: white;
-  padding: 1rem 2rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
+  background-color: #000;
+  color: #fff;
+  padding: 1rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
-nav a {
-  color: white;
+
+header h1 {
+  display: inline-block;
   margin-left: 1rem;
+}
+
+header nav {
+  float: right;
+  margin-right: 1rem;
+}
+
+header nav a {
+  color: #fff;
   text-decoration: none;
-  font-weight: 500;
+  margin-left: 1.5rem;
+  font-weight: 600;
 }
+
+header nav a:hover {
+  color: #ffcc00;
+}
+
+/* Hero */
 #hero {
-  padding: 3rem 2rem;
-  background: linear-gradient(to right, #fceabb, #f8b500);
+  background-color: #ffcc00;
   text-align: center;
+  padding: 4rem 1rem;
 }
+
 #hero h2 {
   font-size: 2rem;
   margin-bottom: 1rem;
 }
+
+#hero p {
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+}
+
 .btn-primary {
-  background-color: #25D366;
-  color: white;
-  padding: 0.75rem 1.5rem;
-  border: none;
+  background-color: #000;
+  color: #fff;
+  padding: 0.8rem 2rem;
   text-decoration: none;
-  font-weight: bold;
+  font-weight: 600;
   border-radius: 5px;
-  transition: background-color 0.3s ease;
 }
+
 .btn-primary:hover {
-  background-color: #1da851;
+  background-color: #333;
 }
-#products, #cart, #contact {
-  padding: 2rem;
-}
+
+/* Products */
 .product-grid {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 2rem;
-  justify-content: center;
+  margin: 2rem 0;
 }
+
 .product-card {
   border: 1px solid #ddd;
   padding: 1rem;
-  border-radius: 10px;
-  width: 250px;
   text-align: center;
-  background: #fff;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-  transition: transform 0.3s ease;
+  border-radius: 10px;
 }
-.product-card:hover {
-  transform: translateY(-5px);
-}
+
 .product-card img {
   width: 100%;
-  height: auto;
+  max-height: 180px;
+  object-fit: cover;
   border-radius: 10px;
 }
-button, .whatsapp-button {
-  background: #25D366;
+
+.product-card button {
+  margin-top: 1rem;
+  background-color: #000;
+  color: #fff;
   border: none;
-  padding: 0.5rem 1rem;
-  color: white;
-  font-weight: bold;
-  margin-top: 0.5rem;
-  cursor: pointer;
+  padding: 0.6rem 1.5rem;
   border-radius: 5px;
-  text-decoration: none;
-  display: inline-block;
+  cursor: pointer;
+  font-weight: 600;
 }
-button:hover, .whatsapp-button:hover {
-  background: #1da851;
+
+.product-card button:hover {
+  background-color: #333;
 }
+
+/* Cart */
 #cart {
-  background: #f9f9f9;
+  background-color: #f8f8f8;
+  padding: 2rem 0;
 }
+
 #cart ul {
   list-style: none;
-  padding: 0;
-}
-#cart li {
-  margin-bottom: 0.5rem;
-}
-form input, form textarea {
-  width: 100%;
   margin-bottom: 1rem;
-  padding: 0.75rem;
-  border: 1px solid #ccc;
-  border-radius: 5px;
 }
-form button {
-  background-color: #111;
-  color: white;
+
+.btn-secondary {
+  background-color: #ff0000;
+  color: #fff;
   border: none;
-  padding: 0.75rem;
-  width: 100%;
+  padding: 0.6rem 1.5rem;
   border-radius: 5px;
+  cursor: pointer;
 }
+
+.btn-secondary:hover {
+  background-color: #cc0000;
+}
+
+/* Contact */
+#contact form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+#contact input, #contact textarea {
+  padding: 0.8rem;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  width: 100%;
+}
+
+#contact button {
+  width: fit-content;
+}
+
+/* Footer */
 footer {
-  background: #111;
-  color: white;
+  background-color: #000;
+  color: #fff;
+  padding: 1.5rem 0;
   text-align: center;
-  padding: 1rem;
-  font-size: 0.9rem;
-}
-@media (max-width: 600px) {
-  header {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  nav {
-    margin-top: 0.5rem;
-  }
-  .product-grid {
-    flex-direction: column;
-    align-items: center;
-  }
+  margin-top: 2rem;
 }
