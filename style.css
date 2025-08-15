@@ -110,8 +110,8 @@ header nav a:hover {
 }
 
 .product-card img {
-  width: 100%;
-  height: auto;
+  width: 999;
+  height: 1413;
   object-fit: cover;
   border-radius: 10px;
   margin-bottom: 1rem;
@@ -234,4 +234,5 @@ footer {
     padding: 3rem 1rem;
   }
 }
+
 
