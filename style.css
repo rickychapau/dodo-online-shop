@@ -1,4 +1,6 @@
-/* Basic Reset */
+/* ------------------------------
+   Basic Reset & Global Styles
+------------------------------- */
 * {
   margin: 0;
   padding: 0;
@@ -7,9 +9,9 @@
 }
 
 body {
-  line-height: 1.6;
   background-color: #fff;
   color: #333;
+  line-height: 1.6;
 }
 
 .container {
@@ -18,7 +20,9 @@ body {
   margin: auto;
 }
 
-/* Header */
+/* ------------------------------
+   Header
+------------------------------- */
 header {
   background-color: #000;
   color: #fff;
@@ -28,14 +32,14 @@ header {
   z-index: 1000;
 }
 
-header h1 {
-  display: inline-block;
-  margin-left: 1rem;
+header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-header nav {
-  float: right;
-  margin-right: 1rem;
+header h1 {
+  font-size: 1.8rem;
 }
 
 header nav a {
@@ -49,7 +53,9 @@ header nav a:hover {
   color: #ffcc00;
 }
 
-/* Hero */
+/* ------------------------------
+   Hero Section
+------------------------------- */
 #hero {
   background-color: #ffcc00;
   text-align: center;
@@ -73,13 +79,16 @@ header nav a:hover {
   text-decoration: none;
   font-weight: 600;
   border-radius: 5px;
+  transition: background 0.3s ease;
 }
 
 .btn-primary:hover {
   background-color: #333;
 }
 
-/* Products */
+/* ------------------------------
+   Products Section
+------------------------------- */
 .product-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -92,13 +101,20 @@ header nav a:hover {
   padding: 1rem;
   text-align: center;
   border-radius: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
 .product-card img {
   width: 100%;
-  max-height: 180px;
+  height: 180px;
   object-fit: cover;
   border-radius: 10px;
+  margin-bottom: 1rem;
 }
 
 .product-card button {
@@ -110,16 +126,20 @@ header nav a:hover {
   border-radius: 5px;
   cursor: pointer;
   font-weight: 600;
+  transition: background 0.3s ease;
 }
 
 .product-card button:hover {
   background-color: #333;
 }
 
-/* Cart */
+/* ------------------------------
+   Cart Section
+------------------------------- */
 #cart {
   background-color: #f8f8f8;
   padding: 2rem 0;
+  margin-bottom: 2rem;
 }
 
 #cart ul {
@@ -134,13 +154,17 @@ header nav a:hover {
   padding: 0.6rem 1.5rem;
   border-radius: 5px;
   cursor: pointer;
+  font-weight: 600;
+  transition: background 0.3s ease;
 }
 
 .btn-secondary:hover {
   background-color: #cc0000;
 }
 
-/* Contact */
+/* ------------------------------
+   Contact Section
+------------------------------- */
 #contact form {
   display: flex;
   flex-direction: column;
@@ -153,17 +177,60 @@ header nav a:hover {
   border-radius: 5px;
   border: 1px solid #ccc;
   width: 100%;
+  resize: none;
 }
 
 #contact button {
   width: fit-content;
 }
 
-/* Footer */
+/* ------------------------------
+   Footer
+------------------------------- */
 footer {
   background-color: #000;
   color: #fff;
   padding: 1.5rem 0;
   text-align: center;
-  margin-top: 2rem;
+}
+
+/* ------------------------------
+   Responsive Media Queries
+------------------------------- */
+@media (max-width: 768px) {
+  header .container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  header nav {
+    margin-top: 0.5rem;
+  }
+
+  #hero h2 {
+    font-size: 1.6rem;
+  }
+
+  #hero p {
+    font-size: 1rem;
+  }
+
+  .product-card img {
+    height: 150px;
+  }
+}
+
+@media (max-width: 480px) {
+  header h1 {
+    font-size: 1.5rem;
+  }
+
+  .btn-primary, .btn-secondary {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.9rem;
+  }
+
+  #hero {
+    padding: 3rem 1rem;
+  }
 }
