@@ -112,7 +112,7 @@ header nav a:hover {
 /* Product images scaling */
 .product-img {
   width: 100%;
-  max-height: 300px; /* scale tall images */
+  max-height: 1500px; /* scale tall images */
   object-fit: cover;  /* crop and maintain aspect ratio */
   border-radius: 10px;
   margin-bottom: 1rem;
@@ -235,6 +235,7 @@ footer {
     padding: 3rem 1rem;
   }
 }
+
 
 
 
