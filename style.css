@@ -109,10 +109,11 @@ header nav a:hover {
   box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
-.product-card img {
-  width: 999;
-  height: 1413;
-  object-fit: cover;
+/* Product images scaling */
+.product-img {
+  width: 100%;
+  max-height: 300px; /* scale tall images */
+  object-fit: cover;  /* crop and maintain aspect ratio */
   border-radius: 10px;
   margin-bottom: 1rem;
 }
@@ -234,5 +235,6 @@ footer {
     padding: 3rem 1rem;
   }
 }
+
 
 
